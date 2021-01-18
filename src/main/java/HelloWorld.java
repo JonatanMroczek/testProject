@@ -1,13 +1,13 @@
 public class HelloWorld {
 
     public static void main (String[] args) {
-        System.out.println(season(1));
-        System.out.println(season(4));
-        System.out.println(season(7));
-        System.out.println(season(10));
-        System.out.println(season(20));
+        System.out.println(day(1));
+        System.out.println(day(4));
+        System.out.println(day(7));
+        System.out.println(day(10));
+        System.out.println(day(20));
     }
-    public static String season(int dayOfTheWeek)
+    public static String day(int dayOfTheWeek)
     {
         String result = "";
         switch (dayOfTheWeek)
