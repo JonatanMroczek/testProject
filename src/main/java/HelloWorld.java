@@ -5,8 +5,7 @@ public class HelloWorld {
         System.out.println(day(4));
         System.out.println(day(7));
         System.out.println(day(10));
-        System.out.println(day(20));
-    }
+            }
     public static String day(int dayOfTheWeek)
     {
         String result = "";
