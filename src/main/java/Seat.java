@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Assertions;
+
 public class Seat {
    private int seatNumber;
    private int rowNumber;
@@ -12,8 +14,7 @@ public class Seat {
        this.isTaken = IsTaken;
    }
 
-
-    public String toString() {
+   public String toString() {
         return seatNumber + " " + rowNumber  + " " + isTaken;
     }
 }

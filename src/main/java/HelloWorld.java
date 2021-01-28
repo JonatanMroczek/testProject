@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Assertions;
+
 public class HelloWorld {
     public static void main(String[] args) {
 
@@ -6,6 +8,8 @@ public class HelloWorld {
       Seat seat1 = new Seat(1,2);
 
       seat1.isSeatTaken(true);
+
+
 
 
     }
