@@ -1,30 +1,19 @@
 public class Seat {
-    int seatNumber;
-    int rowNumber;
-    boolean isTaken;
+   private int seatNumber;
+   private int rowNumber;
+   private boolean isTaken;
+
+   Seat (int seatNumber, int rowNumber) {
+       this.seatNumber = seatNumber;
+       this.rowNumber = rowNumber;
+   }
+
+    void isSeatTaken (boolean IsTaken){
+       this.isTaken = IsTaken;
+   }
 
 
-
-  static String seatProperties(int seatNumber, int rowNumber, boolean isTaken) {
-        return ("Seat number: " + seatNumber + " Row number: "+ rowNumber + " Is taken: " + isTaken);
+    public String toString() {
+        return seatNumber + " " + rowNumber  + " " + isTaken;
     }
-
-
-
-    void setSeatAndRowNumber (int seatNumber, int rowNumber) {
-        this.seatNumber=seatNumber;
-        this.rowNumber=rowNumber;}
-
-        void isSeatTaken (boolean isTaken){
-        this.isTaken=isTaken;
-
-
-
-
-
-
-
-
-
-
-}}
+}
