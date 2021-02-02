@@ -9,10 +9,10 @@ public class SecondsTest {
         int minutes = 10;
 
         //when
-        String changeMinutesToSeconds = Seconds.changeMinutesToSeconds(10);
+        int changeMinutesToSeconds = Seconds.changeMinutesToSeconds(10);
 
         //then
-        Assertions.assertEquals(600 + " seconds", changeMinutesToSeconds);
+        Assertions.assertEquals(600, changeMinutesToSeconds);
     }
     @Test
     void shouldThrowIllegalAccesExpception() {
@@ -20,10 +20,10 @@ public class SecondsTest {
         int minutes = -10;
 
         //when
-        String changeMinutesToSeconds = Seconds.changeMinutesToSeconds(600);
+        int changeMinutesToSeconds = Seconds.changeMinutesToSeconds(600);
 
         //then
-        Assertions.assertEquals(36000 + " seconds", changeMinutesToSeconds);
+        Assertions.assertEquals(36000, changeMinutesToSeconds);
     }
 
 }
