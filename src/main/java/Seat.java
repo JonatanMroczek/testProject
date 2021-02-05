@@ -1,16 +1,20 @@
 public class Seat {
-   private int seatNumber;
-   private int rowNumber;
-   private boolean isTaken;
+    private int seatNumber;
+    private int rowNumber;
+    protected boolean isTaken;
 
-   Seat (int seatNumber, int rowNumber) {
-       this.seatNumber = seatNumber;
-       this.rowNumber = rowNumber;
-   }
+    Seat (int seatNumber, int rowNumber, boolean isTaken) {
+        this.seatNumber = seatNumber;
+        this.rowNumber = rowNumber;
+        this.isTaken = isTaken;
+    }
+    public void setTaken(boolean taken) {
+        isTaken = taken;
+    }
 
-    void isSeatTaken (boolean IsTaken){
-       this.isTaken = IsTaken;
-   }
+    public boolean isTaken() {
+        return isTaken;
+    }
 
 
     public String toString() {
