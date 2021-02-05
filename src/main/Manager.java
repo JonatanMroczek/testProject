@@ -1,20 +1,26 @@
 public class Manager extends BaseEmployee {
 
-    int bonus = 500;
-    int baseSalary = 5000;
+    private static final int DEFAULT_SALARY = 5000;
+    private static int bonus = 500;
 
-    Manager (String name, String surname, int yearOfEmployment){
-        this.name = name;
-        this.surname = surname;
-        this.yearOfEmployment = yearOfEmployment;
+    public Manager (String name, String surname, int yearOfEmployment){
+        super(name, surname,DEFAULT_SALARY, yearOfEmployment);
     }
+
+    public Manager (String name, String surname, int baseSalary, int yearOfEmployment) {
+        super(name, surname, baseSalary, yearOfEmployment);
+    }
+
 
     @Override
     int calculateMonthlySalary (){
         return baseSalary + bonus;
     }
-    void setBouns (int bonus) {
+    void setBonus (int bonus) {
         this.bonus = bonus;
+    }
+    public static int getBonus() {
+        return bonus;
     }
 
 

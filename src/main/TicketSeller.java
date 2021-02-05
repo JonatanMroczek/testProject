@@ -1,9 +1,20 @@
 public class TicketSeller extends BaseEmployee {
 
-    TicketSeller (String name, String surname, int yearOfEmployment){
-            this.name = name;
-            this.surname = surname;
-            this.yearOfEmployment = yearOfEmployment;
-        }
+    private static final int DEFAULT_SALARY = 3000;
+
+    TicketSeller(String name, String surname, int yearOfEmployment) {
+        super(name, surname,DEFAULT_SALARY, yearOfEmployment);
+    }
+
+    TicketSeller(String name, String surname, int baseSalary, int yearOfEmployment) {
+        super(name, surname, baseSalary, yearOfEmployment);
+    }
+
+    @Override
+    int calculateMonthlySalary() {
+        return baseSalary ;
+    }
+
+
 }
 
