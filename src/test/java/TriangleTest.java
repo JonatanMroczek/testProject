@@ -3,29 +3,29 @@ import org.junit.jupiter.api.Test;
 public class TriangleTest {
 
     @Test
-    void shouldReturnTriangleIsRectangular() {
+    void shouldReturnTrue() {
         //given
-        double lengthA = 15;
-        double lenghtB = 17;
-        double lenghtC = 8;
+        double lengthA = 3;
+        double lenghtB = 4;
+        double lenghtC = 5;
 
         //when
-        String checkIfTirangleIsRectangular = Triangle.checkIfTirangleIsRectangular(lengthA,lenghtB,lenghtC);
+        boolean isRectangular = Triangle.isRectengular(lengthA,lenghtB,lenghtC);
 
         //then
-        Assertions.assertEquals("This Triangle is not Rectangual", checkIfTirangleIsRectangular);
+        Assertions.assertEquals(true, isRectangular);
     }
     @Test
-    void shouldReturnTriangleIsNotRectangular() {
+    void shouldReturnFalse() {
         //given
         double lenghtA = 15;
         double lenghtB = 16;
         double lenghtC = 30;
 
         //when
-        String checkIfTirangleIsRectangular = Triangle.checkIfTirangleIsRectangular(lenghtA,lenghtB,lenghtC);
+        boolean isRectangular = Triangle.isRectengular(lenghtA,lenghtB,lenghtC);
 
         //then
-        Assertions.assertEquals("This Triangle is not Rectangual", checkIfTirangleIsRectangular);
+        Assertions.assertEquals(false, isRectangular);
     }
 }

@@ -1,18 +1,12 @@
-import java.lang.Math;
 public class Triangle {
-    private double angleA;
-    private double angleB;
-    private double angleC;
 
-    public static String checkIfTirangleIsRectangular(double angleA, double angleB, double angleC) {
-        if (Math.sqrt(angleA) + Math.sqrt(angleB) == Math.sqrt(angleC)) {
 
-            return ("This Triangle is Rectangual");
+    public static boolean isRectengular (double lengthA, double lengthB, double lengthC) {
+        if (lengthA*lengthA + lengthB*lengthB==lengthC*lengthC){
+            return true;
         }
-        else
-
-    {
-        return "This Triangle is not Rectangual";
+        else {
+            return false;
+        }
     }
-}
 }
