@@ -1,7 +1,7 @@
 public class Seat {
     private int seatNumber;
     private int rowNumber;
-    protected boolean isTaken;
+    private boolean isTaken;
 
     Seat (int seatNumber, int rowNumber, boolean isTaken) {
         this.seatNumber = seatNumber;
