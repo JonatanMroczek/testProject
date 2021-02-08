@@ -5,7 +5,7 @@ public class RectangleTest {
 
 
     @Test
-    void shouldReturnRectangleAreaIs20() {
+    void shouldReturnRectangleArea() {
         //given
         double length = 10;
         double width = 2;
@@ -18,7 +18,7 @@ public class RectangleTest {
         Assertions.assertEquals(20, area);
     }
     @Test
-    void shouldReturnRectanglePerimeterIs24() {
+    void shouldReturnRectanglePerimeter() {
         //given
         double length = 10;
         double width = 2;
