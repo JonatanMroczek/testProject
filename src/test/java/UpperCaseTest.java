@@ -13,11 +13,11 @@ public class UpperCaseTest {
 
 
         //when
-        String formatText = upperCase.formatText(textToFormat);
+        String formattedText = upperCase.formatText(textToFormat);
 
 
         //then
-        Assertions.assertEquals("TEXT EXAMPLE", formatText);
+        Assertions.assertEquals("TEXT EXAMPLE", formattedText);
     }
 
 

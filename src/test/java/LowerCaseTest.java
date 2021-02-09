@@ -3,16 +3,16 @@ import org.junit.jupiter.api.Test;
 
 class LowerCaseTest {
     @Test
-    void shouldReturnCircleArea() {
+    void shouldReturnTextInLowerCase() {
         //given
         String textToFormat = "Text Example";
         LowerCase lowerCase = new LowerCase();
 
         //when
-        String formatedText = lowerCase.formatText(textToFormat);
+        String formattedText = lowerCase.formatText(textToFormat);
 
         //then
-        Assertions.assertEquals("text example", formatedText);
+        Assertions.assertEquals("text example", formattedText);
     }
 
 }
