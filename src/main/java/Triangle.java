@@ -1,28 +1,28 @@
 public class Triangle extends Shape {
 
 
-    private final double LengthA;
-    private final double lengthB;
-    private final double lengthC;
-    private final double height;
+    private final double LENGTH_A;
+    private final double LENGTH_B;
+    private final double LENGTH_C;
+    private final double HEIGHT;
 
-    public Triangle(double lengthA, double lengthB, double lengthC, double height) {
-        this.LengthA = lengthA;
-        this.lengthB = lengthB;
-        this.lengthC = lengthC;
-        this.height = height;
+    public Triangle(double LENGTH_A, double LENGTH_B, double LENGTH_C, double HEIGHT) {
+        this.LENGTH_A = LENGTH_A;
+        this.LENGTH_B = LENGTH_B;
+        this.LENGTH_C = LENGTH_C;
+        this.HEIGHT = HEIGHT;
 
     }
     @Override
    public double area () {
 
-        return 0.5* LengthA * height;
+        return 0.5* LENGTH_A * HEIGHT;
     }
 
     @Override
     public double perimeter () {
 
-        return LengthA + lengthB + lengthC;
+        return LENGTH_A + LENGTH_B + LENGTH_C;
     }
 }
 

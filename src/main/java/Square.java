@@ -1,17 +1,11 @@
-import java.lang.Math;
 public class Square extends Rectangle {
-    double  width = this.length;
+    double  WIDTH = this.LENGTH;
 
 
-    public Square (double length) {
-        super (length, length);
-        this.length = length;
+    public Square (double LENGTH) {
+        super (LENGTH, LENGTH);
     }
 
 
-    @Override
-   public double perimeter ()
-    {
-        return length*4;
-    }
+
 }
