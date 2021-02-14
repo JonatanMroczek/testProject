@@ -1,9 +1,9 @@
 public class Square extends Rectangle {
-    double  WIDTH = this.LENGTH;
+    double  width = this.length;
 
 
-    public Square (double LENGTH) {
-        super (LENGTH, LENGTH);
+    public Square (double length) {
+        super (length, length);
     }
 
 

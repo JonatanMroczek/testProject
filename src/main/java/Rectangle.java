@@ -1,21 +1,21 @@
 public class Rectangle extends Shape {
-  protected final double WIDTH;
-  protected final double LENGTH;
+  protected final double width;
+  protected final double length;
 
 
 
-    public Rectangle (double WIDTH, double LENGTH) {
-        this.WIDTH = WIDTH;
-        this.LENGTH = LENGTH;
+    public Rectangle (double width, double length) {
+        this.width = width;
+        this.length = length;
     }
 
     public double area() {
-        return WIDTH * LENGTH;
+        return width * length;
     }
 
     @Override
     public double perimeter() {
-        return 2 * (WIDTH + LENGTH);
+        return 2 * (width + length);
     }
 
 }
