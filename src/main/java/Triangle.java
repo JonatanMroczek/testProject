@@ -1,3 +1,4 @@
+
 public class Triangle {
     private double width = 20;
     private double height = 15;
@@ -10,3 +11,4 @@ public class Triangle {
         return width + " " + height;
     }
 }
+
