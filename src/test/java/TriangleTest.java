@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 public class TriangleTest {
 
     @Test
@@ -29,3 +30,4 @@ public class TriangleTest {
         Assertions.assertEquals(false, isRectangular);
     }
 }
+
