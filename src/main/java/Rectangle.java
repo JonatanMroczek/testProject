@@ -1,3 +1,4 @@
+<
 public class Rectangle implements Shape{
 
     private double length;
@@ -11,10 +12,13 @@ public class Rectangle implements Shape{
     @Override
     public double area () {
         return  length * width;
+
     }
 
     @Override
     public double perimeter() {
+
         return (length + width) * 2;
     }
+
 }
