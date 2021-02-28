@@ -6,22 +6,19 @@ public class Circle implements Shape {
 
     public Circle(double radius) {
 
-public class Circle extends Shape {
-    private final double radius;
+            }
 
-    public Circle (double radius){
+            @Override
 
-    }
+            public double area() {
+                return pi * radius * radius;
+            }
 
-    @Override
+            @Override
+            public double perimeter() {
+                return 2 * pi * radius;
 
-    public double area() {
-        return pi * radius * radius;
-    }
+            }
+        }
 
-    @Override
-    public double perimeter() {
-        return 2*pi*radius;
 
-    }
-}
