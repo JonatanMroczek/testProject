@@ -1,6 +1,8 @@
-public abstract class Shape {
-    public abstract double area();
-    public abstract double perimeter();
-}
 
+public interface Shape {
+    public double area();
+    public double perimeter();
+
+
+}
 

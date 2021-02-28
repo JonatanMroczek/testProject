@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 public class RectangleTest {
 
 
@@ -7,7 +8,9 @@ public class RectangleTest {
     @Test
     void shouldReturnRectangleArea() {
         //given
-        double length = 10;
+
+        double length = 4;
+
         double width = 2;
         Rectangle rectangle = new Rectangle(width,length);
 
@@ -15,12 +18,16 @@ public class RectangleTest {
         double area = rectangle.area();
 
         //then
-        Assertions.assertEquals(20, area);
+
+        Assertions.assertEquals(8, area);
+
     }
     @Test
     void shouldReturnRectanglePerimeter() {
         //given
-        double length = 10;
+
+        double length = 4;
+
         double width = 2;
         Rectangle rectangle = new Rectangle(length,width);
 
@@ -28,6 +35,8 @@ public class RectangleTest {
         double perimeter = rectangle.perimeter();
 
         //then
-        Assertions.assertEquals(24, perimeter);
+
+        Assertions.assertEquals(12, perimeter);
     }
 }
+
