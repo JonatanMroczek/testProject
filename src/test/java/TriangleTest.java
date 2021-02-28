@@ -1,36 +1,33 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-class TriangleTest {
+
+public class TriangleTest {
+
     @Test
-    void shouldReturnTriangleArea() {
+    void shouldReturnTrue() {
         //given
-        double lengthA = 15;
-        double lengthB = 8;
-        double lengthC = 17;
-        double height = 8;
-        Triangle triangle = new Triangle(lengthA,lengthB,lengthC,height);
+        double lengthA = 3;
+        double lenghtB = 4;
+        double lenghtC = 5;
 
         //when
-        double area = triangle.area();
+        boolean isRectangular = Triangle.isRectengular(lengthA,lenghtB,lenghtC);
 
         //then
-        Assertions.assertEquals(60, area);
+        Assertions.assertEquals(true, isRectangular);
     }
     @Test
-    void shouldReturnTrianglePerimeter() {
+    void shouldReturnFalse() {
         //given
-        double lengthA = 15;
-        double lengthB = 8;
-        double lengthC = 17;
-        double height = 8;
-        Triangle triangle = new Triangle(lengthA,lengthB,lengthC,height);
+        double lenghtA = 15;
+        double lenghtB = 16;
+        double lenghtC = 30;
 
         //when
-        double perimeter = triangle.perimeter();
+        boolean isRectangular = Triangle.isRectengular(lenghtA,lenghtB,lenghtC);
 
         //then
-        Assertions.assertEquals(40, perimeter);
+        Assertions.assertEquals(false, isRectangular);
     }
-
-    
 }
+
