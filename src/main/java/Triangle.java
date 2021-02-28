@@ -1,14 +1,12 @@
-
 public class Triangle {
-    private double width = 20;
-    private double height = 15;
 
-    public Triangle(double width, double height) {
-        this.width = width;
-        this.height = height;
-    }
-    public String toString() {
-        return width + " " + height;
+
+    public static boolean isRectengular (double lengthA, double lengthB, double lengthC) {
+        if (lengthA*lengthA + lengthB*lengthB==lengthC*lengthC){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
-

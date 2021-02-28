@@ -1,8 +1,8 @@
 
 public class Rectangle implements Shape{
 
-    private double length;
-    private double width;
+    protected double length;
+    protected double width;
 
     public Rectangle(double length, double width) {
     this.length = length;
