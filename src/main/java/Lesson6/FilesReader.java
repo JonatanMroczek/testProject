@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 public class FilesReader {
     public static void main(String[] args) {
         try {
+
             String pathToFile = "..\\data.txt\\data.txt";
             Path path = Paths.get(pathToFile);
             String fileContent = Files.readString(path);
@@ -17,3 +18,4 @@ public class FilesReader {
         }
     }
 }
+
