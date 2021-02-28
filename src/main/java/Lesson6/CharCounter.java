@@ -1,31 +1,29 @@
 package Lesson6;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class EverySecondLineReader {
+public class CharCounter {
     public static void main(String[] args) {
         try {
-
             String pathToFile = "..\\data.txt\\data.txt";
             Path path = Paths.get(pathToFile);
             String fileContent = Files.readString(path);
             BufferedReader in = new BufferedReader(new FileReader(pathToFile));
-            int count = 0;
-            String line;
-            while ((line = in.readLine()) != null) {
-                if (count % 2 == 0) {
-                    System.out.println(line);
-                }
-                ++count;
+            int charCount = 0;
+            String text;
+            while ((text = in.readLine()) != null) {
+                charCount +=text.length();
             }
-
+            System.out.println(charCount);
+        } catch (FileNotFoundException fileNotFoundException) {
+            fileNotFoundException.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
+
+
