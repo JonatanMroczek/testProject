@@ -7,15 +7,17 @@ public class DivisibilityBy3 {
 
     public static void validate(int[] values) {
         int i;
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i < values.length; i++) {
             try {
                 if (values[i] % 3 != 0) {
-                    throw new IllegalArgumentException("Liczba:" + values[i] + " Nie jest podzielna przez 3");
+                    throw new IllegalArgumentException("IllegalArgumentException Liczba:" + values[i] + " Nie jest podzielna przez 3");
 
-                } else System.out.println("Liczba:" + values[i] + " Jest podzielna przez 3");
+                } else {
+                    System.out.println("Liczba:" + values[i] + " Jest podzielna przez 3");
+                }
 
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
 
 
