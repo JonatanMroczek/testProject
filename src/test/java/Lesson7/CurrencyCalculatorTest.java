@@ -16,12 +16,12 @@ public class CurrencyCalculatorTest {
         double euroBuyRate = 4.58;
         int amount = 100;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getBuyRate(Currency.EURO)).thenReturn(euroBuyRate);
+        when(mockedService.getExchangeRate(Currency.EURO, Currency.POLISH_ZLOTY)).thenReturn(euroBuyRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateBuy(amount, Currency.EURO);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.EURO, Currency.POLISH_ZLOTY);
 
         //then
         Assertions.assertEquals(euroBuyRate * amount, calculatedCurrency);
@@ -34,12 +34,12 @@ public class CurrencyCalculatorTest {
         double euroSellRate = 4.62;
         int amount = 89600;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getSellRate(Currency.EURO)).thenReturn(euroSellRate);
+        when(mockedService.getExchangeRate(Currency.POLISH_ZLOTY, Currency.EURO)).thenReturn(euroSellRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateSell(amount, Currency.EURO);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.POLISH_ZLOTY, Currency.EURO);
 
         //then
         Assertions.assertEquals(euroSellRate * amount, calculatedCurrency);
@@ -50,14 +50,14 @@ public class CurrencyCalculatorTest {
     void shouldVerifyInteractionWithExternalService4DollarBuyRate() {
         // given
         double dollarBuyRate = 3.86;
-        int amount = 12500;
+        int amount = 1250;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getBuyRate(Currency.DOLLAR)).thenReturn(dollarBuyRate);
+        when(mockedService.getExchangeRate(Currency.DOLLAR, Currency.POLISH_ZLOTY)).thenReturn(dollarBuyRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateBuy(amount, Currency.DOLLAR);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.DOLLAR, Currency.POLISH_ZLOTY);
 
         //then
         Assertions.assertEquals(dollarBuyRate * amount, calculatedCurrency);
@@ -68,14 +68,14 @@ public class CurrencyCalculatorTest {
     void shouldVerifyInteractionWithExternalService4DollarSellRate() {
         // given
         double dollarSellRate = 3.89;
-        int amount = 300;
+        int amount = 3000;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getSellRate(Currency.DOLLAR)).thenReturn(dollarSellRate);
+        when(mockedService.getExchangeRate(Currency.POLISH_ZLOTY, Currency.DOLLAR)).thenReturn(dollarSellRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateSell(amount, Currency.DOLLAR);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.POLISH_ZLOTY, Currency.DOLLAR);
 
         //then
         Assertions.assertEquals(dollarSellRate * amount, calculatedCurrency);
@@ -88,12 +88,12 @@ public class CurrencyCalculatorTest {
         double poundBuyRate = 5.33;
         int amount = 1220;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getBuyRate(Currency.POUND)).thenReturn(poundBuyRate);
+        when(mockedService.getExchangeRate(Currency.POUND, Currency.POLISH_ZLOTY)).thenReturn(poundBuyRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateBuy(amount, Currency.POUND);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.POUND, Currency.POLISH_ZLOTY);
 
         //then
         Assertions.assertEquals(poundBuyRate * amount, calculatedCurrency);
@@ -106,12 +106,12 @@ public class CurrencyCalculatorTest {
         double poundSellRate = 5.33;
         int amount = 1220;
         CurrencyCalculatorService mockedService = Mockito.mock(CurrencyCalculatorService.class);
-        when(mockedService.getSellRate(Currency.POUND)).thenReturn(poundSellRate);
+        when(mockedService.getExchangeRate(Currency.POLISH_ZLOTY, Currency.POUND)).thenReturn(poundSellRate);
         CurrencyCalculator currencyCalculator = new CurrencyCalculator(mockedService);
 
 
         // when
-        double calculatedCurrency = currencyCalculator.calculateSell(amount, Currency.POUND);
+        double calculatedCurrency = currencyCalculator.calculateExchangeRate(amount, Currency.POLISH_ZLOTY, Currency.POUND);
 
         //then
         Assertions.assertEquals(poundSellRate * amount, calculatedCurrency);
