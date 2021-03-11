@@ -3,33 +3,28 @@ package Lesson7;
 import Lesson7.ExternalService.BaseSalaryService;
 import Lesson7.ExternalService.SaturdayBonusService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.NullAndEmptySource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 class SalaryCalculatorTest {
 
-    Employee employee = new Employee();
 
     @Test
     void shouldVerifyCalculateSalaryInteractionWithExternalService() {
         //given
         double saturdayBonus = 50;
         double baseSalary = 6000;
-        SaturdayBonusService mockedService = Mockito.mock(SaturdayBonusService.class);
-        BaseSalaryService mockedService1 = Mockito.mock(BaseSalaryService.class);
-        when(mockedService.getSaturdayBonus(employee)).thenReturn(saturdayBonus);
-        when(mockedService1.getBaseSalary(employee)).thenReturn(baseSalary);
-        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedService, mockedService1);
+        SaturdayBonusService mockedSaturdayBonusService = Mockito.mock(SaturdayBonusService.class);
+        BaseSalaryService mockedBaseSalaryService = Mockito.mock(BaseSalaryService.class);
+        when(mockedSaturdayBonusService.getSaturdayBonus()).thenReturn(saturdayBonus);
+        when(mockedBaseSalaryService.getBaseSalary()).thenReturn(baseSalary);
+        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedSaturdayBonusService, mockedBaseSalaryService);
 
         //when
-        double calculatedSalary = salaryCalculator.calculateSalary(employee, 200, 3);
+        double calculatedSalary = salaryCalculator.calculateSalary(200, 3);
 
         //then
         Assertions.assertEquals(6350, calculatedSalary);
@@ -41,14 +36,14 @@ class SalaryCalculatorTest {
         //given
         double saturdayBonus = 0;
         double baseSalary = 6000;
-        SaturdayBonusService mockedService = Mockito.mock(SaturdayBonusService.class);
-        BaseSalaryService mockedService1 = Mockito.mock(BaseSalaryService.class);
-        when(mockedService.getSaturdayBonus(employee)).thenReturn(saturdayBonus);
-        when(mockedService1.getBaseSalary(employee)).thenReturn(baseSalary);
-        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedService, mockedService1);
+        SaturdayBonusService mockedSaturdayBonusService = Mockito.mock(SaturdayBonusService.class);
+        BaseSalaryService mockedBaseSalaryService = Mockito.mock(BaseSalaryService.class);
+        when(mockedSaturdayBonusService.getSaturdayBonus()).thenReturn(saturdayBonus);
+        when(mockedBaseSalaryService.getBaseSalary()).thenReturn(baseSalary);
+        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedSaturdayBonusService, mockedBaseSalaryService);
 
         //when
-        double calculatedSalary = salaryCalculator.calculateSalary(employee, 200, 3);
+        double calculatedSalary = salaryCalculator.calculateSalary(200, 3);
 
         //then
         Assertions.assertEquals(6200, calculatedSalary);
@@ -62,14 +57,14 @@ class SalaryCalculatorTest {
         int saturdays = -20;
         double saturdayBonus = 0;
         double baseSalary = 6000;
-        SaturdayBonusService mockedService = Mockito.mock(SaturdayBonusService.class);
-        BaseSalaryService mockedService1 = Mockito.mock(BaseSalaryService.class);
-        when(mockedService.getSaturdayBonus(employee)).thenReturn(saturdayBonus);
-        when(mockedService1.getBaseSalary(employee)).thenReturn(baseSalary);
-        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedService, mockedService1);
+        SaturdayBonusService mockedSaturdayBonusService = Mockito.mock(SaturdayBonusService.class);
+        BaseSalaryService mockedBaseSalaryService = Mockito.mock(BaseSalaryService.class);
+        when(mockedSaturdayBonusService.getSaturdayBonus()).thenReturn(saturdayBonus);
+        when(mockedBaseSalaryService.getBaseSalary()).thenReturn(baseSalary);
+        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedSaturdayBonusService, mockedBaseSalaryService);
         //when
         Throwable exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            salaryCalculator.calculateSalary(employee, bonus, saturdays);
+            salaryCalculator.calculateSalary(bonus, saturdays);
         });
 
         //then
@@ -85,14 +80,14 @@ class SalaryCalculatorTest {
         int saturdays = 6;
         double saturdayBonus = 0;
         double baseSalary = 6000;
-        SaturdayBonusService mockedService = Mockito.mock(SaturdayBonusService.class);
-        BaseSalaryService mockedService1 = Mockito.mock(BaseSalaryService.class);
-        when(mockedService.getSaturdayBonus(employee)).thenReturn(saturdayBonus);
-        when(mockedService1.getBaseSalary(employee)).thenReturn(baseSalary);
-        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedService, mockedService1);
+        SaturdayBonusService mockedSaturdayBonusService = Mockito.mock(SaturdayBonusService.class);
+        BaseSalaryService mockedBaseSalaryService = Mockito.mock(BaseSalaryService.class);
+        when(mockedSaturdayBonusService.getSaturdayBonus()).thenReturn(saturdayBonus);
+        when(mockedBaseSalaryService.getBaseSalary()).thenReturn(baseSalary);
+        SalaryCalculator salaryCalculator = new SalaryCalculator(mockedSaturdayBonusService, mockedBaseSalaryService);
         //when
         Throwable exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            salaryCalculator.calculateSalary(employee, bonus, saturdays);
+            salaryCalculator.calculateSalary(bonus, saturdays);
         });
 
         //then
