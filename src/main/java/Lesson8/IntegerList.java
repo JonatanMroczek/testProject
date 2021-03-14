@@ -1,18 +1,21 @@
 package Lesson8;
 
-
-import org.apache.commons.lang3.ArrayUtils;
+import java.util.Arrays;
 
 
 public class IntegerList implements OwnList {
 
+    private int size = 0;
 
-    public static Integer[] arrayAsList = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    public  Integer[] arrayAsList;
 
+    public IntegerList() {
+        arrayAsList = new Integer[10];
+    }
 
     @Override
     public int size() {
-        return arrayAsList.length;
+        return size;
     }
 
     @Override
@@ -25,7 +28,10 @@ public class IntegerList implements OwnList {
 
     @Override
     public void add(Integer element) {
-        arrayAsList = ArrayUtils.add(arrayAsList, element);
+        if (arrayAsList.length <= 1) {
+            increaseListSize();
+        }
+        arrayAsList[size++] = element;
     }
 
 
@@ -37,18 +43,43 @@ public class IntegerList implements OwnList {
     @Override
     public void add(int index, Integer element) {
         if (index < 0 || index > arrayAsList.length) {
-            throw new IllegalArgumentException("List does not contain entered index");
+            throw new IndexOutOfBoundsException("List does not contain entered index");
         }
-        arrayAsList = ArrayUtils.add(arrayAsList, index, element);
+        if (size > arrayAsList.length - 1) {
+            increaseListSize();
+        }
+
+        if (index < size) {
+
+            for (int i = size + 1; i > index; i--) {
+                arrayAsList[i] = arrayAsList[i - 1];
+            }
+            arrayAsList[index] = element;
+            size++;
+        } else {
+
+            arrayAsList[size++] = element;
+        }
     }
+
 
     @Override
     public Integer remove(int index) {
         if (index < 0 || index > arrayAsList.length) {
-            throw new IllegalArgumentException("List does not contain entered index");
+            throw new IndexOutOfBoundsException("List does not contain entered index");
         }
-        arrayAsList = ArrayUtils.remove(arrayAsList, index);
 
+        for (int i = index; i < size - 1; i++) {
+            arrayAsList[i] = arrayAsList[i + 1];
+        }
+
+        arrayAsList[size - 1] = null;
+        size--;
         return null;
+    }
+
+    private void increaseListSize() {
+        arrayAsList = Arrays.copyOf(arrayAsList, arrayAsList.length * 2);
+
     }
 }
