@@ -7,7 +7,7 @@ public class IntegerList implements OwnList {
 
     private int size = 0;
 
-    public  Integer[] arrayAsList;
+    public static Integer[] arrayAsList;
 
     public IntegerList() {
         arrayAsList = new Integer[10];
@@ -28,7 +28,7 @@ public class IntegerList implements OwnList {
 
     @Override
     public void add(Integer element) {
-        if (arrayAsList.length <= 1) {
+        if (arrayAsList.length - size <= 1) {
             increaseListSize();
         }
         arrayAsList[size++] = element;
@@ -78,8 +78,8 @@ public class IntegerList implements OwnList {
         return null;
     }
 
-    private void increaseListSize() {
-        arrayAsList = Arrays.copyOf(arrayAsList, arrayAsList.length * 2);
+        private void increaseListSize() {
+            arrayAsList = Arrays.copyOf(arrayAsList, arrayAsList.length * 2);
 
     }
 }
