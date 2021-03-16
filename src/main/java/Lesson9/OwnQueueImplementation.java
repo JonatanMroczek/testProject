@@ -4,13 +4,14 @@ import java.util.Arrays;
 
 public class OwnQueueImplementation implements OwnQueue {
 
-    private static int[] queueArray;
+    protected static int[] queueArray;
     private final int front = 0;
     private int back = -1;
-    private int size = 0;
+    protected int size = 0;
 
 
     public OwnQueueImplementation() {
+
         queueArray = new int[0];
     }
 
@@ -27,13 +28,15 @@ public class OwnQueueImplementation implements OwnQueue {
 
     @Override
     public Integer remove() {
+        if (size == 0) {
+            throw new IndexOutOfBoundsException("Can't remove element from an empty array!");
+        }
         int removedElement = queueArray[front];
         for (int i = 0; i < queueArray.length - 1; i++) {
             queueArray[i] = queueArray[i + 1];
         }
         decreaseArraySize();
         size--;
-
         return removedElement;
     }
 
