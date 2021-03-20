@@ -11,7 +11,7 @@ public class Pizzas {
         Pizza prosciutto = new Pizza(false, "Prosciutto", 5500);
         prosciutto.addToppings(Toppings.MOZARELLA, Toppings.SALAMI);
         Pizza vegetarian = new Pizza(true, "Vegetarian", 3500);
-        vegetarian.addToppings(Toppings.MOZARELLA, Toppings.CEBULA, Toppings.PAPRYKA, Toppings.SELER);
+        vegetarian.addToppings(Toppings.MOZARELLA, Toppings.POMIDOR, Toppings.PAPRYKA, Toppings.SELER);
         Pizza marinara = new Pizza(true, "Marinara", 2000);
         marinara.addToppings(Toppings.POMIDOR);
         Pizza vesuvio = new Pizza(false, "Vesuvio", 3020);
@@ -27,7 +27,7 @@ public class Pizzas {
         Pizza pepperPizza = new Pizza(true, "Pepper", 4000);
         pepperPizza.addToppings(Toppings.MOZARELLA, Toppings.PAPRYKA);
 
-        List<Pizza> pizzaList = new ArrayList<Pizza>();
+        List<Pizza> pizzaList = new ArrayList<>();
         pizzaList.add(margherita);
         pizzaList.add(prosciutto);
         pizzaList.add(vegetarian);
@@ -52,13 +52,13 @@ public class Pizzas {
                 .forEach(pizza -> System.out.println(pizza.getName()));
 
 
-        Boolean anyElement = pizzaList
+        boolean anyElement = pizzaList
                 .stream()
                 .filter((Pizza::isVegetarian))
                 .anyMatch((pizza -> pizza.setOfToppings.contains(Toppings.POMIDOR) && pizza.setOfToppings.contains(Toppings.PAPRYKA)));
         System.out.println("Czy są wegetariańskie pizze zawierające pomidor i paprykę: " + anyElement);
 
-        Boolean allElements = pizzaList
+        boolean allElements = pizzaList
                 .stream()
                 .allMatch((pizza -> pizza.setOfToppings.contains(Toppings.MOZARELLA)));
         System.out.println("Czy wszystkie pizze zawierają mozarelle: " + allElements);

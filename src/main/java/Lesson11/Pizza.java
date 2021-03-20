@@ -1,22 +1,17 @@
 package Lesson11;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Set;
 
 
 public class Pizza {
-    public static void main(String[] args) {
 
-
-    }
-
-
-    public Set<Toppings> setOfToppings = EnumSet.noneOf(Toppings.class);
-    public String name;
-    public int calories;
-    public boolean isVegetarian;
+    protected Set<Toppings> setOfToppings = EnumSet.noneOf(Toppings.class);
+    private String name;
+    private int calories;
+    private boolean isVegetarian;
 
 
     public Pizza(boolean isVegetarian, String name, int calories) {
