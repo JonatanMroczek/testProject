@@ -3,15 +3,16 @@ package Lesson11;
 public class ScreeningRoom {
 
 
-    private String screeningRoomType;
-    private String name;
+    private final ScreeningRoomType screeningRoomType;
+    private final String name;
 
-    public ScreeningRoom(String name, String screeningRoomType) {
+    public ScreeningRoom(String name, ScreeningRoomType screeningRoomType) {
         this.name = name;
         this.screeningRoomType = screeningRoomType;
+
     }
 
-    public String getScreeningRoomType() {
+    public ScreeningRoomType getScreeningRoomType() {
         return screeningRoomType;
     }
 
