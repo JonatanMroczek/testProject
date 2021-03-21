@@ -14,7 +14,7 @@ public class ScreeningRoomList {
 
         System.out.println("Screening rooms types counted:");
         Map<String, Long> groupByTypeAndCount = screeningRooms.stream().collect(Collectors.groupingBy((ScreeningRoom::getScreeningRoomType), Collectors.counting()));
-        groupByTypeAndCount.forEach((screeningRo, count) -> System.out.println(screeningRo + "=" + count));
+        groupByTypeAndCount.forEach((screeningRoomsType, count) -> System.out.println(screeningRoomsType + "=" + count));
 
 
     }
@@ -32,8 +32,7 @@ public class ScreeningRoomList {
         ScreeningRoom silverHall = new ScreeningRoom("Silver Hall", "2D");
 
 
-        List<ScreeningRoom> screeningRoomList = Arrays.asList(blueHall, redHall, blackHall, yellowHall, pinkHall, whiteHall, purpleHall, greenHall, brownHall, silverHall);
-        return screeningRoomList;
+        return Arrays.asList(blueHall, redHall, blackHall, yellowHall, pinkHall, whiteHall, purpleHall, greenHall, brownHall, silverHall);
 
     }
 }
